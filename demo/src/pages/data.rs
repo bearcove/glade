@@ -1,7 +1,7 @@
 //! Data page - DiffStats, CodeExecutionResult, ToolCallBadge, CodeBlock, Table, Stat, List, Descriptions, HoverCard, Popover
 
 use dioxus::prelude::*;
-use glade_dioxus::{
+use glade::{
     Button, CodeBlock, CodeExecutionResult, DescriptionItem, Descriptions, DescriptionsLayout,
     DiffFileSummary, DiffStats, DiffStatsStyle, ExecutionStatus, Grid, HoverCard,
     HoverCardPosition, Language, List, ListItem, Popover, PopoverContent, PopoverPosition, Row,

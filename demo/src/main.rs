@@ -8,7 +8,7 @@ mod pages;
 
 use dioxus::prelude::*;
 use dioxus::router::{use_navigator, use_route, Link, Routable, Router};
-use glade_dioxus::{
+use glade::{
     Breadcrumb, BreadcrumbItem, Button, ButtonVariant, CommandItem, CommandPalette, Container,
     IconAlertCircle, IconCheck, IconChevronRight, IconFileText, IconLoader, IconMenu, IconPlus,
     IconSearch, MainContent, Navbar, NavbarActions, NavbarBrand, PageNav, Sidebar, SidebarItem,

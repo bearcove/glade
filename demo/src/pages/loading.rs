@@ -1,7 +1,7 @@
 //! Loading page - Progress, Spinner, CircularProgress
 
 use dioxus::prelude::*;
-use glade_dioxus::{
+use glade::{
     CircularProgress, Progress, ProgressSize, ProgressVariant, Row, RowAlign, Section, Spinner,
     SpinnerSize, Stack, SubSection,
 };

@@ -1,7 +1,7 @@
 //! Feedback page - Alert, Toast, Tooltip, EmptyState
 
 use dioxus::prelude::*;
-use glade_dioxus::{
+use glade::{
     Alert, AlertVariant, Button, ButtonVariant, EmptyState, Row, Section, Stack, SubSection, Toast,
     ToastVariant, Tooltip, TooltipPosition,
 };

@@ -1,6 +1,6 @@
-# glade-dioxus Demo
+# glade Demo
 
-A demo application showcasing all glade-dioxus components.
+A demo application showcasing all glade components.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ You need two terminals - one for the stylance CSS watcher and one for the Dioxus
 
 **Terminal 1 - CSS watcher:**
 ```bash
-cd /path/to/glade-dioxus
+cd /path/to/glade
 stylance --watch .
 ```
 
@@ -28,7 +28,7 @@ This watches all `.module.scss` files and regenerates `css/stylance.scss`.
 
 **Terminal 2 - Dev server:**
 ```bash
-cd /path/to/glade-dioxus/demo
+cd /path/to/glade/demo
 dx serve
 ```
 

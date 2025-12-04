@@ -1,4 +1,4 @@
-# glade-dioxus
+# glade
 
 A comprehensive Dioxus component library with CSS modules via [stylance](https://crates.io/crates/stylance).
 
@@ -70,13 +70,13 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-glade-dioxus = { git = "https://github.com/bearcove/glade-dioxus" }
+glade = { git = "https://github.com/bearcove/glade" }
 ```
 
 Import and use components:
 
 ```rust
-use glade_dioxus::{Button, ButtonVariant, Input, Card, CardHeader, CardContent};
+use glade::{Button, ButtonVariant, Input, Card, CardHeader, CardContent};
 
 rsx! {
     Card {
@@ -92,7 +92,7 @@ rsx! {
 Include the CSS in your app:
 
 ```rust
-use glade_dioxus::{GLADE_BASE_CSS, GLADE_STYLANCE_CSS};
+use glade::{GLADE_BASE_CSS, GLADE_STYLANCE_CSS};
 
 rsx! {
     document::Link { rel: "stylesheet", href: GLADE_BASE_CSS }

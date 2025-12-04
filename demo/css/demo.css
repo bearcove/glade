@@ -6,7 +6,7 @@
  * 2. Minimal resets (box-sizing, body margin)
  *
  * DO NOT add custom component styles here. If something needs styling,
- * it should be a glade-dioxus component with its own scoped CSS.
+ * it should be a glade component with its own scoped CSS.
  * The demo exists to DEMONSTRATE components, not to style around them.
  */
 

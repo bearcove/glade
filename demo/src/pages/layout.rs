@@ -1,7 +1,7 @@
 //! Layout page - Separator, AspectRatio, ScrollArea, Carousel, SplitPane
 
 use dioxus::prelude::*;
-use glade_dioxus::{
+use glade::{
     AspectRatio, AspectRatioPreset, Card, CardContent, Carousel, CarouselNavigation, CarouselSlide,
     Grid, Row, ScrollArea, ScrollDirection, Section, Separator, SeparatorOrientation, Stack,
     SubSection,

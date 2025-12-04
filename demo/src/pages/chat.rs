@@ -1,7 +1,7 @@
 //! Chat page - ChatBubble, MessageComposer, MessageGroup, MessageList, ThreadList, etc.
 
 use dioxus::prelude::*;
-use glade_dioxus::{
+use glade::{
     AttachmentChip, AttachmentType, ChatBubble, ChatBubbleAlign, ChatBubbleVariant,
     DayDivider, GroupMessage, MessageComposer, MessageGroup, MessageList, NewMessagesDivider,
     NotificationBadge, NotificationBadgeSize, Row, RowAlign, Section, Stack, StreamingStatus,

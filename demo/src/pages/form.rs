@@ -1,7 +1,7 @@
 //! Form page - Input, Textarea, Select, Checkbox, Radio, Toggle, Slider, FileInput, Rating, Label, Calendar
 
 use dioxus::prelude::*;
-use glade_dioxus::{
+use glade::{
     Calendar, CalendarSize, Checkbox, FileInput, FormField, Grid, Input, Label, Radio, RadioGroup,
     Rating, RatingSize, Row, RowAlign, Section, SegmentedInput, Select, Slider, SliderSize, Stack,
     SubSection, Toggle, ToggleSize, Textarea,

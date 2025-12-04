@@ -1,7 +1,7 @@
 //! Navigation page - Tabs, Dropdown, Modal, Navbar, Sidebar, AlertDialog, Drawer, Accordion, Collapsible, Pagination, Steps
 
 use dioxus::prelude::*;
-use glade_dioxus::{
+use glade::{
     Accordion, AccordionItem, AlertDialog, AlertDialogVariant, Button, ButtonVariant, Collapsible,
     ContextMenu, ContextMenuContent, ContextMenuDivider, ContextMenuItem, ContextMenuTrigger,
     Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerPosition, Dropdown, DropdownDivider,

@@ -1,7 +1,7 @@
 //! Primitives page - Icons, Button, Badge, Card, Avatar
 
 use dioxus::prelude::*;
-use glade_dioxus::{
+use glade::{
     Avatar, AvatarGroup, AvatarSize, Badge, BadgeSize, BadgeVariant, Button, ButtonGroup,
     ButtonSize, ButtonVariant, Card, CardContent, CardDescription, CardFooter, CardHeader,
     CardTitle, IconAlertCircle, IconCheck, IconChevronDown, IconChevronRight, IconCircleCheck,

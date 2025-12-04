@@ -1,7 +1,7 @@
 //! Misc page - TodoList, ColorSwatch, PulsingDots, Sunburst, RetryButton, Footer, AppShell
 
 use dioxus::prelude::*;
-use glade_dioxus::{
+use glade::{
     Button, ColorSwatch, Footer, FooterBottom, FooterCopyright, FooterLink, FooterLinks,
     FooterSection, PulsingDots, PulsingDotsSize, RetryButton, RetryButtonState, Row, RowAlign,
     Section, Stack, SubSection, Sunburst, SunburstSize, TodoItem, TodoList, TodoSize,
