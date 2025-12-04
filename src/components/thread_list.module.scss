@@ -1,0 +1,135 @@
+.thread_list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--color-bg, #ffffff);
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.header {
+    flex-shrink: 0;
+}
+
+.list_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-bg, #ffffff);
+    border-bottom: 1px solid var(--color-border, #e5e7eb);
+}
+
+.list_title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text, #1a1a1a);
+}
+
+.list_actions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.items {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.section {
+    padding: 0.5rem 1rem 0.25rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted, #6b7280);
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-border, #e5e7eb);
+    cursor: pointer;
+    transition: background 0.15s;
+
+    &:hover {
+        background: var(--color-bg-hover, #f9fafb);
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.selected {
+    background: var(--color-primary-alpha, rgba(59, 130, 246, 0.1));
+
+    &:hover {
+        background: var(--color-primary-alpha, rgba(59, 130, 246, 0.15));
+    }
+}
+
+.pinned {
+    background: var(--color-bg-muted, #f9fafb);
+}
+
+.unread {
+    .item_title {
+        font-weight: 600;
+    }
+
+    .item_snippet {
+        color: var(--color-text, #1a1a1a);
+    }
+}
+
+.item_content {
+    flex: 1;
+    min-width: 0;
+}
+
+.item_header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.125rem;
+}
+
+.item_title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text, #1a1a1a);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item_time {
+    flex-shrink: 0;
+    font-size: 0.6875rem;
+    color: var(--color-text-muted, #6b7280);
+}
+
+.item_snippet {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #6b7280);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item_badge {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}

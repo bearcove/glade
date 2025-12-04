@@ -1,0 +1,81 @@
+.link {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.2em;
+    text-decoration: none;
+    transition: color 0.15s;
+
+    &:visited {
+        color: inherit;
+    }
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+
+    &:hover {
+        text-decoration-thickness: 2px;
+    }
+}
+
+// Variants
+.default {
+    color: var(--color-primary-text);
+
+    &:hover {
+        color: var(--color-primary-hover);
+    }
+
+    &:visited {
+        color: var(--color-primary-text);
+    }
+
+    &:visited:hover {
+        color: var(--color-primary-hover);
+    }
+}
+
+.muted {
+    color: var(--color-text-muted);
+
+    &:hover {
+        color: var(--color-text);
+    }
+
+    &:visited {
+        color: var(--color-text-muted);
+    }
+
+    &:visited:hover {
+        color: var(--color-text);
+    }
+}
+
+.inherit {
+    color: inherit;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:visited {
+        color: inherit;
+    }
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    opacity: 0.6;
+    position: relative;
+    top: 0.1em;
+
+    svg {
+        width: 0.8em;
+        height: 0.8em;
+    }
+}

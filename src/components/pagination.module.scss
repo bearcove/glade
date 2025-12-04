@@ -1,0 +1,139 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  user-select: none;
+}
+
+.page_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--glade-border-color, light-dark(#e2e8f0, #374151));
+  border-radius: 0.375rem;
+  background: var(--glade-bg, light-dark(white, #1f2937));
+  color: var(--glade-text-color, light-dark(#374151, #e5e7eb));
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  &:hover:not(:disabled) {
+    background: var(--glade-hover-bg, light-dark(#f3f4f6, #374151));
+    border-color: var(--glade-border-hover, light-dark(#d1d5db, #4b5563));
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--glade-focus-ring, #3b82f6);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.active {
+    background: var(--glade-primary, #3b82f6);
+    border-color: var(--glade-primary, #3b82f6);
+    color: white;
+
+    &:hover:not(:disabled) {
+      background: var(--glade-primary-hover, #2563eb);
+    }
+  }
+
+  &.control {
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+
+.ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  color: var(--glade-text-muted, #9ca3af);
+  font-size: 0.875rem;
+}
+
+.page_info {
+  padding: 0 0.75rem;
+  color: var(--glade-text-muted, #6b7280);
+  font-size: 0.875rem;
+}
+
+// Simple variant
+.simple {
+  gap: 0.5rem;
+
+  .page_button.control {
+    padding: 0 0.75rem;
+  }
+}
+
+// Size variants
+.small {
+  .page_button {
+    min-width: 1.5rem;
+    height: 1.5rem;
+    padding: 0 0.375rem;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+
+    &.control svg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+  }
+
+  .ellipsis {
+    min-width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  .page_info {
+    font-size: 0.75rem;
+  }
+}
+
+.large {
+  gap: 0.375rem;
+
+  .page_button {
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+
+    &.control svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  .ellipsis {
+    min-width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .page_info {
+    font-size: 1rem;
+  }
+}
+
+// Disabled state
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}

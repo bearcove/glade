@@ -1,0 +1,41 @@
+.button_group {
+    display: inline-flex;
+    
+    // Target direct button children
+    > button,
+    > :global(*) > button {
+        border-radius: 0;
+        
+        // Collapse borders - shift left by 1px to overlap
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
+        
+        // On hover/focus, bring to front so border shows fully
+        &:hover,
+        &:focus {
+            position: relative;
+            z-index: 1;
+        }
+    }
+    
+    // First button gets left radius
+    > button:first-child,
+    > :global(*):first-child > button {
+        border-top-left-radius: 0.375rem;
+        border-bottom-left-radius: 0.375rem;
+    }
+    
+    // Last button gets right radius
+    > button:last-child,
+    > :global(*):last-child > button {
+        border-top-right-radius: 0.375rem;
+        border-bottom-right-radius: 0.375rem;
+    }
+    
+    // Single button gets all radius
+    > button:only-child,
+    > :global(*):only-child > button {
+        border-radius: 0.375rem;
+    }
+}

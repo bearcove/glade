@@ -1,0 +1,110 @@
+.collapsible {
+  width: 100%;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--glade-bg-subtle, light-dark(#f9fafb, #1f2937));
+  border: 1px solid var(--glade-border-color, light-dark(#e2e8f0, #374151));
+  border-radius: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--glade-hover-bg, light-dark(#f3f4f6, #374151));
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--glade-focus-ring, #3b82f6);
+    outline-offset: 2px;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--glade-text-muted, #6b7280);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+
+  svg {
+    display: block;
+  }
+}
+
+.open {
+  .trigger {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .icon {
+    transform: rotate(180deg);
+  }
+
+  .content_wrapper {
+    grid-template-rows: 1fr;
+  }
+}
+
+.content_wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s ease;
+  border: 1px solid var(--glade-border-color, light-dark(#e2e8f0, #374151));
+  border-top: none;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  background: var(--glade-bg, light-dark(white, #111827));
+
+  // Hide when closed
+  .collapsible:not(.open) & {
+    border: none;
+  }
+}
+
+.content {
+  overflow: hidden;
+  padding: 0 1rem;
+
+  .open & {
+    padding: 1rem;
+  }
+}
+
+// Disabled state
+.disabled {
+  .trigger {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    &:hover {
+      background: var(--glade-bg-subtle, light-dark(#f9fafb, #1f2937));
+    }
+  }
+}
+
+// Panel variant styles
+.panel_header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  text-align: left;
+}
+
+.panel_title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--glade-text-color, #374151);
+}
+
+.panel_subtitle {
+  font-size: 0.75rem;
+  color: var(--glade-text-muted, #6b7280);
+}

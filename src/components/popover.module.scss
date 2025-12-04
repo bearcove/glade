@@ -1,0 +1,129 @@
+.popover_container {
+    position: relative;
+    display: inline-flex;
+}
+
+.trigger {
+    cursor: pointer;
+}
+
+.popover {
+    position: absolute;
+    z-index: 100;
+    min-width: 200px;
+    background: var(--color-bg, #ffffff);
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+}
+
+.open {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+// Position: Bottom (default, centered)
+.bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+    margin-top: 0.5rem;
+
+    &.open {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+// Position: Top (centered)
+.top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+    margin-bottom: 0.5rem;
+
+    &.open {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+// Position: Left
+.left {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) scale(0.95);
+    margin-right: 0.5rem;
+
+    &.open {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+// Position: Right
+.right {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) scale(0.95);
+    margin-left: 0.5rem;
+
+    &.open {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+// Position: Bottom Start (left-aligned)
+.bottom_start {
+    top: 100%;
+    left: 0;
+    transform: scale(0.95);
+    margin-top: 0.5rem;
+
+    &.open {
+        transform: scale(1);
+    }
+}
+
+// Position: Bottom End (right-aligned)
+.bottom_end {
+    top: 100%;
+    right: 0;
+    transform: scale(0.95);
+    margin-top: 0.5rem;
+
+    &.open {
+        transform: scale(1);
+    }
+}
+
+// Position: Top Start (left-aligned)
+.top_start {
+    bottom: 100%;
+    left: 0;
+    transform: scale(0.95);
+    margin-bottom: 0.5rem;
+
+    &.open {
+        transform: scale(1);
+    }
+}
+
+// Position: Top End (right-aligned)
+.top_end {
+    bottom: 100%;
+    right: 0;
+    transform: scale(0.95);
+    margin-bottom: 0.5rem;
+
+    &.open {
+        transform: scale(1);
+    }
+}
+
+// Content wrapper
+.content {
+    padding: 0.75rem 1rem;
+}

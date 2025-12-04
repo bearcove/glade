@@ -1,0 +1,96 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.375rem;
+    margin-bottom: 0.5rem;
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: light-dark(#1a1a1a, #e2e8f0);
+}
+
+.container {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    width: fit-content;
+    background: light-dark(#fff, #1e293b);
+    border: 1px solid light-dark(#d1d5db, #475569);
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
+
+.text {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    color: light-dark(#1a1a1a, #e2e8f0);
+    white-space: nowrap;
+    user-select: all;
+}
+
+.copy_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    background: light-dark(#f9fafb, #334155);
+    border: none;
+    border-left: 1px solid light-dark(#d1d5db, #475569);
+    color: light-dark(#6b7280, #94a3b8);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+
+    svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    &:hover {
+        background: light-dark(#f3f4f6, #475569);
+        color: light-dark(#1a1a1a, #f1f5f9);
+    }
+
+    &:active {
+        background: light-dark(#e5e7eb, #1e293b);
+    }
+}
+
+.copied {
+    background: light-dark(#dcfce7, #166534);
+    color: light-dark(#16a34a, #86efac);
+
+    &:hover {
+        background: light-dark(#dcfce7, #166534);
+        color: light-dark(#16a34a, #86efac);
+    }
+}
+
+// Size variants
+.small {
+    .text {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .copy_button {
+        width: 1.75rem;
+        height: 1.75rem;
+
+        svg {
+            width: 0.875rem;
+            height: 0.875rem;
+        }
+    }
+}

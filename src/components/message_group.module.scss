@@ -1,0 +1,115 @@
+.group {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 100%;
+}
+
+.self_group {
+    flex-direction: row-reverse;
+
+    .content {
+        align-items: flex-end;
+    }
+
+    .header {
+        flex-direction: row-reverse;
+    }
+
+    .messages {
+        align-items: flex-end;
+    }
+
+    .message {
+        background: var(--color-primary);
+        color: #ffffff;
+    }
+}
+
+.avatar {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+    max-width: 75%;
+}
+
+.header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0 0.25rem;
+}
+
+.author {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-text, #1a1a1a);
+}
+
+.timestamp {
+    font-size: 0.6875rem;
+    color: var(--color-text-muted, #6b7280);
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.125rem;
+}
+
+.message {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    background: var(--color-bg-muted, #f3f4f6);
+    border-radius: 1rem;
+    word-wrap: break-word;
+
+    // Single message - full rounded
+    &:only-child {
+        border-radius: 1rem;
+    }
+
+    // First message in group (not only child)
+    &:first-child:not(:only-child) {
+        border-radius: 1rem 1rem 1rem 0.25rem;
+    }
+
+    // Last message in group (not only child)
+    &:last-child:not(:only-child) {
+        border-radius: 0.25rem 1rem 1rem 1rem;
+    }
+
+    // Middle messages
+    &:not(:first-child):not(:last-child) {
+        border-radius: 0.25rem 1rem 1rem 0.25rem;
+    }
+}
+
+.self_group .message {
+    // Single message - full rounded
+    &:only-child {
+        border-radius: 1rem;
+    }
+
+    // First message in self group (not only child)
+    &:first-child:not(:only-child) {
+        border-radius: 1rem 1rem 0.25rem 1rem;
+    }
+
+    // Last message in self group (not only child)
+    &:last-child:not(:only-child) {
+        border-radius: 1rem 0.25rem 1rem 1rem;
+    }
+
+    // Middle messages in self group
+    &:not(:first-child):not(:last-child) {
+        border-radius: 1rem 0.25rem 0.25rem 1rem;
+    }
+}

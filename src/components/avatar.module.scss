@@ -1,0 +1,81 @@
+.avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: var(--color-bg-muted);
+    border: 2px solid var(--color-bg);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.small {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.xlarge {
+    width: 4rem;
+    height: 4rem;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.initials {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.small .initials {
+    font-size: 0.625rem;
+}
+
+.large .initials {
+    font-size: 1rem;
+}
+
+.xlarge .initials {
+    font-size: 1.25rem;
+}
+
+// Avatar Group
+.group {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    .avatar {
+        margin-left: -0.75rem;
+
+        &:last-child {
+            margin-left: 0;
+        }
+    }
+}
+
+.group_small .avatar {
+    margin-left: -0.5rem;
+}
+
+.group_large .avatar {
+    margin-left: -0.875rem;
+}
+
+.group_xlarge .avatar {
+    margin-left: -1rem;
+}

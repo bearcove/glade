@@ -1,0 +1,159 @@
+.stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: var(--glade-bg-subtle, #f3f4f6);
+  color: var(--glade-primary, #3b82f6);
+  flex-shrink: 0;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--glade-text-muted, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--glade-text-color, light-dark(#111827, #f3f4f6));
+  line-height: 1.2;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.change {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--glade-text-muted, #6b7280);
+}
+
+.trend_icon {
+  display: inline-flex;
+}
+
+.trend_up {
+  color: var(--glade-success, #10b981);
+}
+
+.trend_down {
+  color: var(--glade-error, #ef4444);
+}
+
+.description {
+  font-size: 0.75rem;
+  color: var(--glade-text-muted, #6b7280);
+}
+
+// Size variants
+.small {
+  .icon {
+    width: 2rem;
+    height: 2rem;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .value {
+    font-size: 1.125rem;
+  }
+
+  .label,
+  .change,
+  .description {
+    font-size: 0.6875rem;
+  }
+}
+
+.large {
+  gap: 1rem;
+
+  .icon {
+    width: 3rem;
+    height: 3rem;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  .value {
+    font-size: 2.25rem;
+  }
+
+  .label {
+    font-size: 0.875rem;
+  }
+
+  .change,
+  .description {
+    font-size: 0.875rem;
+  }
+}
+
+// Stat group
+.stat_group {
+  display: grid;
+  grid-template-columns: repeat(var(--stat-columns, 3), 1fr);
+  gap: 1.5rem;
+}
+
+.with_dividers {
+  .stat {
+    position: relative;
+    padding-right: 1.5rem;
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--glade-border-color, #e5e7eb);
+    }
+  }
+}
+
+// Stat card variant
+.stat_card {
+  padding: 1rem 1.25rem;
+  background: var(--glade-bg, light-dark(white, #1f2937));
+  border: 1px solid var(--glade-border-color, light-dark(#e5e7eb, #374151));
+  border-radius: 0.75rem;
+}

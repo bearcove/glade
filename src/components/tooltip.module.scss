@@ -1,0 +1,111 @@
+// Copied from Leptos version; tooltip styling with positional arrows
+.tooltip_wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 1000;
+    padding: 0.375rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #ffffff;
+    background: light-dark(#404040, #525252);
+    border-radius: 0.25rem;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.15s, transform 0.15s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    // Arrow
+    &::after {
+        content: "";
+        position: absolute;
+        border: 5px solid transparent;
+    }
+}
+
+.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+// Position: Top (default)
+.top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+    margin-bottom: 0.5rem;
+
+    &.visible {
+        transform: translateX(-50%) scale(1);
+    }
+
+    &::after {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top-color: light-dark(#404040, #525252);
+    }
+}
+
+// Position: Bottom
+.bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+    margin-top: 0.5rem;
+
+    &.visible {
+        transform: translateX(-50%) scale(1);
+    }
+
+    &::after {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom-color: light-dark(#404040, #525252);
+    }
+}
+
+// Position: Left
+.left {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) scale(0.95);
+    margin-right: 0.5rem;
+
+    &.visible {
+        transform: translateY(-50%) scale(1);
+    }
+
+    &::after {
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border-left-color: light-dark(#404040, #525252);
+    }
+}
+
+// Position: Right
+.right {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) scale(0.95);
+    margin-left: 0.5rem;
+
+    &.visible {
+        transform: translateY(-50%) scale(1);
+    }
+
+    &::after {
+        right: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border-right-color: light-dark(#404040, #525252);
+    }
+}

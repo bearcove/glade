@@ -1,0 +1,261 @@
+.steps {
+  display: flex;
+  width: 100%;
+}
+
+.horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+
+  .step {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &:last-child {
+      flex: 0 0 auto;
+
+      .connector {
+        display: none;
+      }
+    }
+  }
+
+  .connector {
+    position: absolute;
+    top: 1rem;
+    left: calc(50% + 1.25rem);
+    right: calc(-50% + 1.25rem);
+    height: 2px;
+    background: var(--glade-border-color, light-dark(#e5e7eb, #374151));
+
+    .completed & {
+      background: var(--glade-primary, #3b82f6);
+    }
+  }
+
+  .content {
+    margin-top: 0.5rem;
+  }
+}
+
+.vertical {
+  flex-direction: column;
+  gap: 0;
+
+  .step {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-bottom: 1.5rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .connector {
+    position: absolute;
+    top: 2rem;
+    left: calc(1rem - 1px);
+    bottom: -0.5rem;
+    width: 2px;
+    background: var(--glade-border-color, light-dark(#e5e7eb, #374151));
+
+    .completed & {
+      background: var(--glade-primary, #3b82f6);
+    }
+  }
+
+  .content {
+    margin-left: 0.75rem;
+    text-align: left;
+  }
+}
+
+.step {
+  position: relative;
+  display: flex;
+  min-width: 0;
+}
+
+.clickable {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+
+  &:hover .indicator {
+    transform: scale(1.05);
+  }
+
+  &:focus-visible .indicator {
+    outline: 2px solid var(--glade-focus-ring, #3b82f6);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--glade-border-color, light-dark(#e5e7eb, #374151));
+  background: var(--glade-bg, light-dark(white, #111827));
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--glade-text-muted, #6b7280);
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+  z-index: 1;
+
+  svg {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--glade-text-color, light-dark(#374151, #e5e7eb));
+}
+
+.description {
+  font-size: 0.75rem;
+  color: var(--glade-text-muted, #6b7280);
+}
+
+// Status variants
+.pending {
+  .indicator {
+    border-color: var(--glade-border-color, light-dark(#e5e7eb, #374151));
+    color: var(--glade-text-muted, light-dark(#9ca3af, #6b7280));
+  }
+
+  .title {
+    color: var(--glade-text-muted, #6b7280);
+  }
+}
+
+.current {
+  .indicator {
+    border-color: var(--glade-primary, #3b82f6);
+    background: var(--glade-primary, #3b82f6);
+    color: white;
+  }
+
+  .title {
+    color: var(--glade-primary, #3b82f6);
+    font-weight: 600;
+  }
+}
+
+.completed {
+  .indicator {
+    border-color: var(--glade-primary, #3b82f6);
+    background: var(--glade-primary, #3b82f6);
+    color: white;
+  }
+}
+
+.error {
+  .indicator {
+    border-color: var(--glade-error, #ef4444);
+    background: var(--glade-error, #ef4444);
+    color: white;
+  }
+
+  .title {
+    color: var(--glade-error, #ef4444);
+  }
+}
+
+// Size variants
+.small {
+  .indicator {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.625rem;
+
+    svg {
+      width: 0.625rem;
+      height: 0.625rem;
+    }
+  }
+
+  .title {
+    font-size: 0.75rem;
+  }
+
+  .description {
+    font-size: 0.625rem;
+  }
+
+  &.horizontal .connector {
+    top: 0.75rem;
+    left: calc(50% + 1rem);
+    right: calc(-50% + 1rem);
+  }
+
+  &.vertical .connector {
+    top: 1.5rem;
+    left: calc(0.75rem - 1px);
+  }
+}
+
+.large {
+  .indicator {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+
+  &.horizontal .connector {
+    top: 1.25rem;
+    left: calc(50% + 1.5rem);
+    right: calc(-50% + 1.5rem);
+  }
+
+  &.vertical {
+    .step {
+      padding-bottom: 2rem;
+    }
+
+    .connector {
+      top: 2.5rem;
+      left: calc(1.25rem - 1px);
+    }
+
+    .content {
+      margin-left: 1rem;
+    }
+  }
+}

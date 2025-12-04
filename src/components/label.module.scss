@@ -1,0 +1,83 @@
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--glade-text-color, #374151);
+  cursor: pointer;
+  user-select: none;
+
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.text {
+  // Label text styling
+}
+
+.required {
+  color: var(--glade-error, #ef4444);
+  font-weight: 500;
+}
+
+.optional_text {
+  color: var(--glade-text-muted, #6b7280);
+  font-weight: 400;
+  font-size: 0.75em;
+}
+
+// Size variants
+.small {
+  font-size: 0.75rem;
+
+  .optional_text {
+    font-size: 0.7em;
+  }
+}
+
+.large {
+  font-size: 1rem;
+}
+
+// Form Field wrapper
+.form_field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 100%;
+
+  &.disabled {
+    opacity: 0.6;
+
+    .label {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.input_wrapper {
+  width: 100%;
+}
+
+.helper_text {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--glade-text-muted, #6b7280);
+  line-height: 1.4;
+}
+
+.error_message {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--glade-error, #ef4444);
+  line-height: 1.4;
+}
+
+.has_error {
+  .label {
+    color: var(--glade-error, #ef4444);
+  }
+}

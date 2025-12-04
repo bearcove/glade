@@ -1,0 +1,103 @@
+.inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-family: var(--font-mono, monospace);
+}
+
+.full {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-family: var(--font-mono, monospace);
+}
+
+.additions {
+    color: var(--color-success, #22c55e);
+}
+
+.deletions {
+    color: var(--color-danger, #ef4444);
+}
+
+.no_changes {
+    color: var(--color-text-muted, #9ca3af);
+}
+
+.bar {
+    display: inline-flex;
+    gap: 1px;
+}
+
+.block_add,
+.block_del,
+.block_empty {
+    width: 0.5rem;
+    height: 0.625rem;
+    border-radius: 1px;
+}
+
+.block_add {
+    background: var(--color-success, #22c55e);
+}
+
+.block_del {
+    background: var(--color-danger, #ef4444);
+}
+
+.block_empty {
+    background: var(--color-bg-muted, #e5e7eb);
+}
+
+// File summary
+.file_summary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.25rem 0;
+    font-size: 0.875rem;
+}
+
+.file_status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    flex-shrink: 0;
+}
+
+.status_added {
+    background: var(--color-success-alpha, rgba(34, 197, 94, 0.15));
+    color: var(--color-success, #22c55e);
+}
+
+.status_deleted {
+    background: var(--color-danger-alpha, rgba(239, 68, 68, 0.15));
+    color: var(--color-danger, #ef4444);
+}
+
+.status_modified {
+    background: var(--color-warning-alpha, rgba(234, 179, 8, 0.15));
+    color: var(--color-warning, #eab308);
+}
+
+.status_renamed {
+    background: var(--color-info-alpha, rgba(59, 130, 246, 0.15));
+    color: var(--color-info, #3b82f6);
+}
+
+.filename {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: var(--font-mono, monospace);
+    color: var(--color-text);
+}

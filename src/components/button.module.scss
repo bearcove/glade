@@ -1,0 +1,148 @@
+.button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    height: 2.25rem;
+    padding: 0 0.75rem;
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    border-radius: 0.375rem;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background 0.1s, border-color 0.1s, box-shadow 0.1s;
+    text-decoration: none;
+    user-select: none;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 1px;
+    }
+}
+
+.content {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    transition: opacity 0.15s, visibility 0.15s;
+
+    svg {
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+    }
+}
+
+.spinner_wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading {
+    cursor: wait;
+
+    .content {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.primary {
+    background: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary-border);
+    box-shadow: inset 0 1px 0 light-dark(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.06));
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    
+    // White spinner for colored background
+    --spinner-track: rgba(255, 255, 255, 0.3);
+    --spinner-color: #ffffff;
+
+    &:hover:not(:disabled) {
+        background: var(--color-primary-hover);
+    }
+
+    &:active:not(:disabled) {
+        background: var(--color-primary-active);
+        box-shadow: none;
+    }
+}
+
+.secondary {
+    background: light-dark(#ffffff, rgba(255, 255, 255, 0.08));
+    color: light-dark(#374151, #e5e7eb);
+    border-color: light-dark(#d1d5db, rgba(255, 255, 255, 0.12));
+
+    &:hover:not(:disabled) {
+        background: light-dark(#f9fafb, rgba(255, 255, 255, 0.12));
+        border-color: light-dark(#9ca3af, rgba(255, 255, 255, 0.18));
+    }
+
+    &:active:not(:disabled) {
+        background: light-dark(#f3f4f6, rgba(255, 255, 255, 0.06));
+    }
+}
+
+.danger {
+    background: var(--color-danger);
+    color: #ffffff;
+    border-color: var(--color-danger-border);
+    box-shadow: inset 0 1px 0 light-dark(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.06));
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    
+    // White spinner for colored background
+    --spinner-track: rgba(255, 255, 255, 0.3);
+    --spinner-color: #ffffff;
+
+    &:hover:not(:disabled) {
+        background: var(--color-danger-hover);
+    }
+
+    &:active:not(:disabled) {
+        background: var(--color-danger);
+        box-shadow: none;
+    }
+}
+
+.ghost {
+    background: transparent;
+    color: light-dark(#6b7280, #b4b4b4);
+    border-color: light-dark(#e5e7eb, rgba(255, 255, 255, 0.1));
+
+    &:hover:not(:disabled) {
+        background: light-dark(rgba(0, 0, 0, 0.04), rgba(255, 255, 255, 0.08));
+        color: light-dark(#374151, #ffffff);
+        border-color: light-dark(#d1d5db, rgba(255, 255, 255, 0.16));
+    }
+
+    &:active:not(:disabled) {
+        background: light-dark(rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0.04));
+    }
+}
+
+.small {
+    height: 1.75rem;
+    padding: 0 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+}
+
+.large {
+    height: 2.75rem;
+    padding: 0 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+}

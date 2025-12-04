@@ -1,0 +1,193 @@
+// Toast container positions
+.container {
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    pointer-events: none;
+
+    > * {
+        pointer-events: auto;
+    }
+}
+
+.top_right {
+    top: 1rem;
+    right: 1rem;
+    align-items: flex-end;
+}
+
+.top_left {
+    top: 1rem;
+    left: 1rem;
+    align-items: flex-start;
+}
+
+.bottom_right {
+    bottom: 1rem;
+    right: 1rem;
+    align-items: flex-end;
+}
+
+.bottom_left {
+    bottom: 1rem;
+    left: 1rem;
+    align-items: flex-start;
+}
+
+.top_center {
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+}
+
+.bottom_center {
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+}
+
+// Toast styles
+.toast {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    min-width: 300px;
+    max-width: 420px;
+    padding: 0.875rem 1rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    animation: toast-in 0.2s ease-out;
+}
+
+@keyframes toast-in {
+    from {
+        opacity: 0;
+        transform: translateY(-0.5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.125rem;
+
+    > svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
+
+.content {
+    flex: 1;
+    min-width: 0;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-text);
+    margin-bottom: 0.125rem;
+}
+
+.message {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
+.dismiss {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    margin: -0.25rem -0.25rem -0.25rem 0;
+    background: none;
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: color 0.15s, background 0.15s;
+
+    &:hover {
+        color: var(--color-text);
+        background: var(--color-bg-muted);
+    }
+
+    > svg {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+// Variants - subtle background tints, no left border
+.info {
+    background: light-dark(
+        color-mix(in srgb, #94a3b8 8%, var(--color-bg)),
+        color-mix(in srgb, #94a3b8 10%, var(--color-bg))
+    );
+    border-color: light-dark(
+        color-mix(in srgb, #94a3b8 12%, var(--color-border)),
+        color-mix(in srgb, #94a3b8 15%, var(--color-border))
+    );
+
+    .icon {
+        color: #94a3b8;
+    }
+}
+
+.success {
+    background: light-dark(
+        color-mix(in srgb, #6ee7b7 8%, var(--color-bg)),
+        color-mix(in srgb, #6ee7b7 10%, var(--color-bg))
+    );
+    border-color: light-dark(
+        color-mix(in srgb, #6ee7b7 15%, var(--color-border)),
+        color-mix(in srgb, #6ee7b7 18%, var(--color-border))
+    );
+
+    .icon {
+        color: #6ee7b7;
+    }
+}
+
+.warning {
+    background: light-dark(
+        color-mix(in srgb, #fcd34d 8%, var(--color-bg)),
+        color-mix(in srgb, #fcd34d 10%, var(--color-bg))
+    );
+    border-color: light-dark(
+        color-mix(in srgb, #fcd34d 15%, var(--color-border)),
+        color-mix(in srgb, #fcd34d 18%, var(--color-border))
+    );
+
+    .icon {
+        color: #fcd34d;
+    }
+}
+
+.error {
+    background: light-dark(
+        color-mix(in srgb, #fda4af 8%, var(--color-bg)),
+        color-mix(in srgb, #fda4af 10%, var(--color-bg))
+    );
+    border-color: light-dark(
+        color-mix(in srgb, #fda4af 15%, var(--color-border)),
+        color-mix(in srgb, #fda4af 18%, var(--color-border))
+    );
+
+    .icon {
+        color: #fda4af;
+    }
+}

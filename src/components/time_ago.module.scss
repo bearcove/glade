@@ -1,0 +1,13 @@
+.time_ago {
+    font-size: inherit;
+    color: var(--color-text-muted, #6b7280);
+    cursor: default;
+
+    &[title] {
+        cursor: help;
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
+        text-decoration-color: var(--color-border, #e5e7eb);
+        text-underline-offset: 2px;
+    }
+}

@@ -1,0 +1,161 @@
+.descriptions {
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--glade-text-color, light-dark(#111827, #f3f4f6));
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(var(--desc-columns, 3), 1fr);
+  gap: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  min-width: 0;
+}
+
+.label {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--glade-text-muted, light-dark(#6b7280, #9ca3af));
+}
+
+.value {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--glade-text-color, light-dark(#374151, #e5e7eb));
+  word-break: break-word;
+}
+
+// Horizontal layout (label and value side by side)
+.horizontal {
+  .item {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .label {
+    min-width: 30%;
+    max-width: 40%;
+  }
+
+  .value {
+    flex: 1;
+  }
+}
+
+// Vertical layout (label above value)
+.vertical {
+  .item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+// Bordered variant
+.bordered {
+  .list {
+    border: 1px solid var(--glade-border-color, light-dark(#e5e7eb, #374151));
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .item {
+    padding: 0.75rem 1rem;
+    background: var(--glade-bg, light-dark(white, #1f2937));
+    border-bottom: 1px solid var(--glade-border-color, light-dark(#e5e7eb, #374151));
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .label {
+    background: var(--glade-bg-subtle, light-dark(#f9fafb, #111827));
+    margin: -0.75rem 0 -0.75rem -1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  &.vertical {
+    .label {
+      margin: -0.75rem -1rem 0.25rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+// Without border
+.descriptions:not(.bordered) {
+  .item {
+    padding: 0.5rem 0;
+  }
+}
+
+// Size variants
+.small {
+  .title {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .label,
+  .value {
+    font-size: 0.75rem;
+  }
+
+  &.bordered .item {
+    padding: 0.5rem 0.75rem;
+  }
+
+  &.bordered .label {
+    margin: -0.5rem 0 -0.5rem -0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  &.bordered.vertical .label {
+    margin: -0.5rem -0.75rem 0.125rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  &:not(.bordered) .item {
+    padding: 0.375rem 0;
+  }
+}
+
+.large {
+  .title {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .label,
+  .value {
+    font-size: 1rem;
+  }
+
+  &.bordered .item {
+    padding: 1rem 1.25rem;
+  }
+
+  &.bordered .label {
+    margin: -1rem 0 -1rem -1.25rem;
+    padding: 1rem 1.25rem;
+  }
+
+  &.bordered.vertical .label {
+    margin: -1rem -1.25rem 0.375rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  &:not(.bordered) .item {
+    padding: 0.625rem 0;
+  }
+}

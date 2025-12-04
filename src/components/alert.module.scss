@@ -1,0 +1,61 @@
+.alert {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+}
+
+.content {
+    flex: 1;
+}
+
+.title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.message {
+    font-size: 0.875rem;
+}
+
+.info {
+    background: light-dark(#f1f5f9, #1e293b);
+    border-color: light-dark(#94a3b8, #475569);
+    color: light-dark(#334155, #e2e8f0);
+
+    .dismiss {
+        color: light-dark(#334155, #e2e8f0);
+    }
+}
+
+.success {
+    background: light-dark(#ecfdf5, #14532d);
+    border-color: light-dark(#6ee7b7, #22c55e);
+    color: light-dark(#166534, #d1fae5);
+
+    .dismiss {
+        color: light-dark(#166534, #d1fae5);
+    }
+}
+
+.warning {
+    background: light-dark(#fefce8, #422006);
+    border-color: light-dark(#fcd34d, #ca8a04);
+    color: light-dark(#854d0e, #fef3c7);
+
+    .dismiss {
+        color: light-dark(#854d0e, #fef3c7);
+    }
+}
+
+.error {
+    background: light-dark(#fef2f2, #450a0a);
+    border-color: light-dark(#fca5a5, #dc2626);
+    color: light-dark(#991b1b, #fee2e2);
+
+    .dismiss {
+        color: light-dark(#991b1b, #fee2e2);
+    }
+}

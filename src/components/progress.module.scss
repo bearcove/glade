@@ -1,0 +1,170 @@
+.progress_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.track {
+    flex: 1;
+    height: 0.25rem;
+    background: var(--color-bg-muted);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+}
+
+.animated .bar {
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 1rem 1rem;
+    animation: progress-stripes 1s linear infinite;
+}
+
+@keyframes progress-stripes {
+    from {
+        background-position: 1rem 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+.indeterminate {
+    width: 30% !important;
+    animation: indeterminate 1.5s ease-in-out infinite;
+}
+
+@keyframes indeterminate {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    min-width: 2.5rem;
+    text-align: right;
+}
+
+/* Sizes */
+.small .track {
+    height: 0.125rem;
+}
+
+.small .label {
+    font-size: 0.6875rem;
+}
+
+.large .track {
+    height: 0.5rem;
+}
+
+.large .label {
+    font-size: 0.875rem;
+}
+
+/* Variants */
+.success .bar {
+    background: var(--color-success);
+}
+
+.warning .bar {
+    background: var(--color-warning);
+}
+
+.error .bar {
+    background: var(--color-error);
+}
+
+/* Circular Progress */
+.circular_wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular_svg {
+    display: block;
+}
+
+.circular_track {
+    stroke: var(--color-bg-muted);
+}
+
+.circular_bar {
+    stroke: var(--color-primary);
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.circular_indeterminate .circular_svg {
+    animation: circular-rotate 1.4s linear infinite;
+}
+
+.circular_indeterminate .circular_bar {
+    animation: circular-dash 1.4s ease-in-out infinite;
+}
+
+@keyframes circular-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes circular-dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+
+.circular_label {
+    position: absolute;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+/* Circular variants */
+.circular_wrapper.success .circular_bar {
+    stroke: var(--color-success);
+}
+
+.circular_wrapper.warning .circular_bar {
+    stroke: var(--color-warning);
+}
+
+.circular_wrapper.error .circular_bar {
+    stroke: var(--color-error);
+}

@@ -1,0 +1,59 @@
+.separator {
+  flex-shrink: 0;
+}
+
+.horizontal {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 1px;
+  background: var(--glade-border-color, #e2e8f0);
+
+  &.dashed {
+    background: none;
+    border-top: 1px dashed var(--glade-border-color, #e2e8f0);
+  }
+
+  // When has label, use pseudo-elements for lines
+  &:has(.label) {
+    height: auto;
+    background: none;
+    gap: 1rem;
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--glade-border-color, #e2e8f0);
+    }
+
+    &.dashed::before,
+    &.dashed::after {
+      background: none;
+      border-top: 1px dashed var(--glade-border-color, #e2e8f0);
+    }
+  }
+}
+
+.vertical {
+  width: 1px;
+  min-height: 1rem;
+  height: 100%;
+  background: var(--glade-border-color, #e2e8f0);
+
+  &.dashed {
+    background: none;
+    border-left: 1px dashed var(--glade-border-color, #e2e8f0);
+  }
+}
+
+.label {
+  flex-shrink: 0;
+  padding: 0;
+  color: var(--glade-text-muted, #6b7280);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

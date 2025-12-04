@@ -1,0 +1,31 @@
+.grid {
+    display: grid;
+}
+
+.cols_auto {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.cols_2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cols_3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cols_4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gap_small {
+    gap: 0.5rem;
+}
+
+.gap_medium {
+    gap: 1rem;
+}
+
+.gap_large {
+    gap: 1.5rem;
+}

@@ -1,0 +1,7 @@
+.main {
+    flex: 1;
+    margin-left: 16rem; /* Space for fixed sidebar */
+    padding: 2rem;
+    padding-top: 5rem; /* Account for fixed navbar (3.5rem) + breathing room */
+    min-width: 0;
+}

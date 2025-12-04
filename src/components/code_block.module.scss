@@ -1,0 +1,244 @@
+.container {
+    background: var(--glade-bg-code, var(--color-bg-code, #1e1e1e));
+    border: 1px solid var(--glade-border, var(--color-border));
+    border-radius: 0.5rem;
+    overflow: hidden;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.375rem 0.625rem;
+    background: var(--glade-bg-code-header, rgba(255, 255, 255, 0.05));
+    border-bottom: 1px solid var(--glade-border, var(--color-border));
+}
+
+.language_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.language_icon {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.7;
+}
+
+.language {
+    font-size: 0.75rem;
+    color: var(--glade-text-muted, var(--color-text-muted));
+    text-transform: lowercase;
+}
+
+.copy_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--glade-text-muted, var(--color-text-muted));
+    cursor: pointer;
+    transition: color 0.1s, background 0.1s;
+}
+
+.copy_button svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.copy_button:hover {
+    color: var(--glade-text, var(--color-text));
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.code_wrapper {
+    display: flex;
+    overflow-x: auto;
+}
+
+.line_numbers {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    text-align: right;
+    color: var(--glade-text-muted, var(--color-text-muted, #6e7681));
+    user-select: none;
+    border-right: 1px solid var(--glade-border, var(--color-border));
+}
+
+.line_numbers span {
+    line-height: 1.5;
+}
+
+.pre {
+    margin: 0;
+    padding: 0.5rem 0.625rem;
+    flex: 1;
+    overflow-x: auto;
+}
+
+.code {
+    display: block;
+    color: var(--glade-text-code, var(--color-text-code, #e6edf3));
+}
+
+// shade uses <i> tags for highlighting - ensure they're not italic
+.code i {
+    font-style: normal;
+}
+
+// Size variants
+.sm .pre,
+.sm .line_numbers {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.sm .header {
+    padding: 0.375rem 0.5rem;
+}
+
+.md .pre,
+.md .line_numbers {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.lg .pre,
+.lg .line_numbers {
+    padding: 1rem;
+    font-size: 0.9375rem;
+}
+
+// Inline code
+.inline {
+    padding: 0.125rem 0.375rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.875em;
+    background: var(--glade-bg-code-inline, rgba(255, 255, 255, 0.1));
+    border-radius: 0.25rem;
+    color: var(--glade-text-code, var(--color-text-code, #e6edf3));
+}
+
+// Syntax highlighting classes from shade (hh0-hh26)
+// These use :global because shade outputs raw class names
+
+:global(.hh0) { // attribute
+    color: #9cdcfe;
+}
+
+:global(.hh1) { // comment
+    color: #6a9955;
+    font-style: italic;
+}
+
+:global(.hh2) { // constant
+    color: #4fc1ff;
+}
+
+:global(.hh3) { // constant.builtin
+    color: #4fc1ff;
+}
+
+:global(.hh4) { // constructor
+    color: #4ec9b0;
+}
+
+:global(.hh5) { // embedded
+    color: #ce9178;
+}
+
+:global(.hh6) { // function
+    color: #dcdcaa;
+}
+
+:global(.hh7) { // function.builtin
+    color: #dcdcaa;
+}
+
+:global(.hh8) { // keyword
+    color: #c586c0;
+}
+
+:global(.hh9) { // module
+    color: #4ec9b0;
+}
+
+:global(.hh10) { // number
+    color: #b5cea8;
+}
+
+:global(.hh11) { // operator
+    color: #d4d4d4;
+}
+
+:global(.hh12) { // property
+    color: #9cdcfe;
+}
+
+:global(.hh13) { // property.builtin
+    color: #9cdcfe;
+}
+
+:global(.hh14) { // punctuation
+    color: #d4d4d4;
+}
+
+:global(.hh15) { // punctuation.bracket
+    color: #ffd700;
+}
+
+:global(.hh16) { // punctuation.delimiter
+    color: #d4d4d4;
+}
+
+:global(.hh17) { // punctuation.special
+    color: #d4d4d4;
+}
+
+:global(.hh18) { // string
+    color: #ce9178;
+}
+
+:global(.hh19) { // string.special
+    color: #d7ba7d;
+}
+
+:global(.hh20) { // tag
+    color: #569cd6;
+}
+
+:global(.hh21) { // type
+    color: #4ec9b0;
+}
+
+:global(.hh22) { // type.builtin
+    color: #4ec9b0;
+}
+
+:global(.hh23) { // variable
+    color: #9cdcfe;
+}
+
+:global(.hh24) { // variable.builtin
+    color: #9cdcfe;
+}
+
+:global(.hh25) { // variable.parameter
+    color: #9cdcfe;
+}
+
+:global(.hh26) { // spell
+    color: #d4d4d4;
+}
