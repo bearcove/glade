@@ -48,6 +48,8 @@ icon!(IconExpand, "expand.svg");
 icon!(IconFullscreen, "fullscreen.svg");
 icon!(IconPanelBottomOpen, "panel-bottom-open.svg");
 icon!(IconPanelBottomClose, "panel-bottom-close.svg");
+icon!(IconRefreshCw, "refresh-cw.svg");
+icon!(IconRefreshCcw, "refresh-ccw.svg");
 icon!(IconChevronsUp, "chevrons-up.svg");
 icon!(IconChevronsDown, "chevrons-down.svg");
 
