@@ -116,6 +116,23 @@ stylance --watch .
 
 This watches `.module.scss` files and generates `css/stylance.scss`.
 
+## Demo
+
+See all components in action:
+
+```bash
+# Install tools
+cargo install dioxus-cli stylance-cli
+
+# Terminal 1: Watch CSS
+stylance --watch .
+
+# Terminal 2: Run demo
+cd demo && dx serve
+```
+
+Then open http://localhost:8080
+
 ## License
 
 MIT OR Apache-2.0
