@@ -16,7 +16,7 @@ pub trait ClipboardEventExt {
 #[cfg(target_arch = "wasm32")]
 impl ClipboardEventExt for dioxus::core::Event<dioxus::html::ClipboardData> {
     fn clipboard_data(&self) -> Option<web_sys::DataTransfer> {
-        use dioxus::web::WebEventExt;
+        use dioxus_web::WebEventExt;
         use wasm_bindgen::JsCast;
 
         let web_evt: web_sys::Event = self.as_web_event();

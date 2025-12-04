@@ -10,6 +10,7 @@ categories = ["gui", "web-programming"]
 
 [dependencies]
 dioxus = { version = "0.7", features = ["signals"] }
+dioxus-web = { version = "0.7", optional = true }
 dioxus-signals = "0.7"
 stylance = { git = "https://github.com/fasterthanlime/stylance-rs", branch = "buck2" }
 chrono = "0.4"
@@ -27,7 +28,7 @@ wasm-bindgen-futures = { version = "0.4", optional = true }
 
 [features]
 default = []
-web = ["futures-channel", "futures-util", "gloo-events", "gloo-timers", "js-sys", "web-sys", "wasm-bindgen", "wasm-bindgen-futures", "jiff/js"]
+web = ["futures-channel", "futures-util", "gloo-events", "gloo-timers", "js-sys", "web-sys", "wasm-bindgen", "wasm-bindgen-futures", "jiff/js", "dioxus-web"]
 buck2 = []  # Disables asset!() macro which requires CARGO_MANIFEST_DIR
 
 [package.metadata.stylance]
