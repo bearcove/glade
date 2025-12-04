@@ -1,7 +1,7 @@
-//! Glade Dioxus Demo - showcasing all components
+//! Glade Demo - showcasing all components
 //!
-//! IMPORTANT: This demo should use ONLY glade-dioxus components.
-//! No custom CSS classes - if something needs styling, add a component to glade-dioxus.
+//! IMPORTANT: This demo should use ONLY glade components.
+//! No custom CSS classes - if something needs styling, add a component to glade.
 //! The demo.css file should ONLY contain CSS variables for theming.
 
 mod pages;

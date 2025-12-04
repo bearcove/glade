@@ -20,7 +20,7 @@ macro_rules! icon {
     };
 }
 
-// Icons used by glade-dioxus components
+// Icons used by glade components
 icon!(IconAlertCircle, "circle-alert.svg");
 icon!(IconCheck, "check.svg");
 icon!(IconChevronDown, "chevron-down.svg");
