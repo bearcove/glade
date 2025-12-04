@@ -39,6 +39,18 @@ icon!(IconSearch, "search.svg");
 icon!(IconTriangleAlert, "triangle-alert.svg");
 icon!(IconX, "x.svg");
 
+// Panel control icons
+icon!(IconMaximize, "maximize.svg");
+icon!(IconMaximize2, "maximize-2.svg");
+icon!(IconMinimize, "minimize.svg");
+icon!(IconMinimize2, "minimize-2.svg");
+icon!(IconExpand, "expand.svg");
+icon!(IconFullscreen, "fullscreen.svg");
+icon!(IconPanelBottomOpen, "panel-bottom-open.svg");
+icon!(IconPanelBottomClose, "panel-bottom-close.svg");
+icon!(IconChevronsUp, "chevrons-up.svg");
+icon!(IconChevronsDown, "chevrons-down.svg");
+
 // Icons used by bearcove
 icon!(IconArchive, "archive.svg");
 icon!(IconBuilding2, "building-2.svg");
